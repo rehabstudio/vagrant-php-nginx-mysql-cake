@@ -3,7 +3,7 @@ env:
     ip: "192.168.33.10"
     ram: 512
     vbname: "rehabstudio_box"
-    ruby: "ruby-2.0.0-p247"
+    ruby: "2.0.0-p247"
     boxurl: "http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-vagrant-amd64-disk1.box"
     boxname: "precise64"
     docRoot : '/var/www/app'

@@ -9,6 +9,13 @@ FORGE
     puppetlabs/stdlib (4.1.0)
 
 GIT
+  remote: git://github.com/alup/puppet-rbenv.git
+  ref: master
+  sha: f06c3aee6831237201b0f1975978a1c7ddad9497
+  specs:
+    rbenv (1.2.0)
+
+GIT
   remote: git://github.com/camptocamp/puppet-archive.git
   ref: master
   sha: 672e568a5e5dd52ed87c9971d4a86f314144d6ee
@@ -99,5 +106,6 @@ DEPENDENCIES
   nginx (>= 0)
   nodejs (>= 0)
   php (>= 0)
+  rbenv (>= 0)
   stdlib (>= 0)
 

@@ -1,4 +1,7 @@
 .vagrant
 logs/*.log
 .tmp/
+.rbenv/
+.profile
+.rbenvrc
 puppet/modules/*

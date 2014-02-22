@@ -21,5 +21,7 @@ mod 'php',
     :git => 'https://github.com/jippi/puppet-php.git'
 mod 'nginx',
     :git => 'https://github.com/jfryman/puppet-nginx.git'
+mod 'rbenv',
+    :git => 'git://github.com/alup/puppet-rbenv.git'
 mod 'cakecore',
     :git => 'git://github.com/rehabstudio/puppet-cake.git'
