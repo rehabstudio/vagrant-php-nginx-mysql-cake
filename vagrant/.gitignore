@@ -1,0 +1,4 @@
+.vagrant
+logs/*.log
+.tmp/
+puppet/modules/*

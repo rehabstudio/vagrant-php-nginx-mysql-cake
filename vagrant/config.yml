@@ -1,0 +1,39 @@
+env:
+    domain: "newsite.dev.rehabstudio.com"
+    ip: "192.168.33.10"
+    ram: 512
+    vbname: "rehabstudio_box"
+    ruby: "ruby-2.0.0-p247"
+    boxurl: "http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-vagrant-amd64-disk1.box"
+    boxname: "precise64"
+    docRoot : '/var/www/app'
+    siteRoot: '/webroot' # appended to docRoot
+mysql:
+    name: "newsitedbname"
+    user: "vagrantuser"
+    pass: "localdbpwd"
+    file: "/vagrant/files/db_schema.sql"
+nginx:
+    errorLog: '/var/logs/app/error.log'
+    accessLog: '/var/logs/app/access.log'
+php:
+    iniOverrides: [
+        "set PHP/short_open_tag Off",
+        "set PHP/expose_php Off",
+        "set PHP/display_errors On",
+        "set PHP/html_errors On",
+        "set PHP/post_max_size 128M",
+        "set PHP/upload_max_filesize 40M",
+        "set Date/date.timezone Europe/Belfast"]
+capistrano: # ssh auth via agent forwarding
+    server_ip: "1.2.3.4"
+    repo: "ssh://git@domain.com/project.git"
+    user: "secureuser" 
+    folder: "/var/www/project.dev"
+    branch:
+        dev: "develop"
+        staging: "master"
+        live: "master"
+cake:
+    repoTag: "2.3.10"
+    corePath: "/var/www/cakephp"

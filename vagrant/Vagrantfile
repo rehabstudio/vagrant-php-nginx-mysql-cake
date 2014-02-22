@@ -1,0 +1,68 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'yaml'
+
+# Import base configuration from YAML file
+ymlconfig = YAML::load(File.open("config.yml"))
+
+# Global variables. Tailor to your projects needs.
+VB_NAME = ymlconfig['env']['vbname'] 
+VB_RAM = ymlconfig['env']['ram']
+DOMAIN = ymlconfig['env']['domain']
+IP = ymlconfig['env']['ip']
+
+Vagrant.require_version ">= 1.4.0"
+Vagrant.configure("2") do |config|
+
+    # Hostmanager plugin configuration.
+    config.hostmanager.enabled = true
+    config.hostmanager.ignore_private_ip = false
+    config.hostmanager.include_offline = true
+    config.hostmanager.manage_host = true
+
+    # Every Vagrant virtual environment requires a box to build off of.
+    # We're supplying the url from where the box will be fetched if it
+    # doesn't already exist on the users system.
+    config.vm.box = ymlconfig['env']['boxname']
+    config.vm.box_url = ymlconfig['env']['boxurl']
+
+    # If true, then any SSH connections made inside the box will also use hosts keys (agent forwarding).
+    config.ssh.forward_agent = true
+
+    # Applying box specific settings.
+    config.vm.define "rehab-box", primary: true do |node|
+
+        # Setting the hostname so it can be used in conjunction with the HostManager plugin.
+        node.vm.hostname = DOMAIN;
+
+        # Create a private network, which allows host-only access to the machine using a specific IP.
+        node.vm.network :private_network, ip: IP
+
+    end
+
+    # Share additional folders to the guest VM.
+    config.vm.synced_folder "../app", "/var/www/app", :mount_options => ["dmode=777","fmode=777"]
+    config.vm.synced_folder "logs", "/var/logs/app", :mount_options => ["dmode=777","fmode=777"]
+
+    # Before puppet provisioner (to update packages).
+    config.vm.provision :shell, :path => "before_puppet.sh"
+
+    # Puppet provisioner.
+    config.vm.provision :puppet do |puppet|
+        puppet.manifest_file  = "init.pp"
+        puppet.manifests_path = "puppet/manifests"
+        puppet.module_path = "puppet/modules"
+        # puppet.options = "--verbose --debug"
+    end
+
+    # After puppet provisioner (for project specific requirements).
+    config.vm.provision :shell, :path => "after_puppet.sh"
+
+    # Provider specific configuration so you can fine-tune properties.
+    config.vm.provider :virtualbox do |vb|
+        vb.name = VB_NAME
+        vb.memory = VB_RAM
+    end
+
+end

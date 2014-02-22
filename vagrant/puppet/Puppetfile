@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+forge "http://forge.puppetlabs.com"
+
+mod 'stdlib',
+    :git => 'git://github.com/puppetlabs/puppetlabs-stdlib.git'
+mod 'concat',
+    :git => 'https://github.com/puppetlabs/puppetlabs-concat.git'
+mod 'apt',
+    :git => 'git://github.com/puppetlabs/puppetlabs-apt.git'
+mod 'archive',
+    :git => 'git://github.com/camptocamp/puppet-archive.git'
+mod 'composer',
+    :git => 'https://github.com/tPl0ch/puppet-composer.git'
+mod 'nodejs',
+    :git => 'git://github.com/puppetlabs/puppetlabs-nodejs.git'
+mod 'mysql',
+    :git => 'git://github.com/puppetlabs/puppetlabs-mysql.git'
+mod 'php',
+    :git => 'https://github.com/jippi/puppet-php.git'
+mod 'nginx',
+    :git => 'https://github.com/jfryman/puppet-nginx.git'
+mod 'cakecore',
+    :git => 'git://github.com/rehabstudio/puppet-cake.git'

@@ -1,0 +1,103 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.4.1)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/concat (1.1.0-rc1)
+      puppetlabs/stdlib (>= 3.0.0)
+    puppetlabs/git (0.0.3)
+    puppetlabs/stdlib (4.1.0)
+
+GIT
+  remote: git://github.com/camptocamp/puppet-archive.git
+  ref: master
+  sha: 672e568a5e5dd52ed87c9971d4a86f314144d6ee
+  specs:
+    archive (0.0.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-apt.git
+  ref: master
+  sha: 738ef15316fef7d3f82d9d29414f71445b3a35d9
+  specs:
+    apt (1.4.1)
+      puppetlabs/stdlib (>= 2.2.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-mysql.git
+  ref: master
+  sha: 1454a5ba198ff48a13d0843f9682e70e28abc83f
+  specs:
+    mysql (2.2.1)
+      puppetlabs/stdlib (>= 3.2.0)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-nodejs.git
+  ref: master
+  sha: 0b0dfdd6ab4185b14b0b2d54da1f0402a6a8a638
+  specs:
+    nodejs (0.4.0)
+      puppetlabs/apt (>= 0.0.3)
+      puppetlabs/stdlib (>= 2.0.0)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-stdlib.git
+  ref: master
+  sha: ab981422a67636441f1bfebaaade36aa690f1f25
+  specs:
+    stdlib (4.1.0)
+
+GIT
+  remote: git://github.com/rehabstudio/puppet-cake.git
+  ref: master
+  sha: ab96925dbee84622026563e325b63c961209a14f
+  specs:
+    cakecore (0.0.1)
+
+GIT
+  remote: https://github.com/jfryman/puppet-nginx.git
+  ref: master
+  sha: 7cf6dac978fe08e061ed9201284c7a5bf22af2a3
+  specs:
+    nginx (0.0.7)
+      puppetlabs/apt (>= 1.0.0)
+      puppetlabs/concat (>= 1.0.0)
+      puppetlabs/stdlib (>= 0.1.6)
+
+GIT
+  remote: https://github.com/jippi/puppet-php.git
+  ref: master
+  sha: d4c8765fe683efdf1f577b0bd7c7010239b04562
+  specs:
+    php (0.7.0)
+      puppetlabs/apt (> 0.0.0)
+      puppetlabs/stdlib (> 0.0.0)
+
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-concat.git
+  ref: master
+  sha: 24906d1bca3f8a1b93b24d71c0e081eda57afc9e
+  specs:
+    concat (1.1.0-rc1)
+      puppetlabs/stdlib (>= 4.0.0)
+
+GIT
+  remote: https://github.com/tPl0ch/puppet-composer.git
+  ref: master
+  sha: 1bf5636c972f84e82566f6cd9945e64b89e36e5a
+  specs:
+    composer (1.2.1)
+      puppetlabs/git (>= 0.0.2)
+
+DEPENDENCIES
+  apt (>= 0)
+  archive (>= 0)
+  cakecore (>= 0)
+  composer (>= 0)
+  concat (>= 0)
+  mysql (>= 0)
+  nginx (>= 0)
+  nodejs (>= 0)
+  php (>= 0)
+  stdlib (>= 0)
+
