@@ -36,7 +36,7 @@ It should also be noted that this is just a base for you to build upon. These sc
 Adding Modules
 --------------
 
-This vagrant setup utilises [Puppet-Librarian](https://github.com/rodjek/librarian-puppet) as a package manager for the Puppet modules. All modules should be added to the repository using this method.
+This vagrant setup utilises [Librarian-Puppet](https://github.com/rodjek/librarian-puppet) as a package manager for the Puppet modules. All modules should be added to the repository using this method.
 
 MySQL Access
 ------------
