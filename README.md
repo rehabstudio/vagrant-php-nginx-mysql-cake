@@ -28,7 +28,7 @@ The Vagrantfile `vagrant/Vagrantfile` and main puppet manifest `vagrant/puppet/m
 
 By default, MySQL has a root user whose password is also root. A project-specific user is also created, whose credentials can be set via the supplied configuration options. A schema is also imported on your behalf which can be found at `vagrant/files/db_schema.sql`. Replace the existing schemawith your own, or, repoint the schema path to a different one. It is important to ensure your schema uses `IF NOT EXISTS` statements to ensure data is not overwritten when reprovisioning your box.
 
-Alongside PHP being installed, PHPUnit and Composer are already present. PHP settings are changed using a tool known as [Augeas](http://augeas.net/) which has a specific syntax to follow. This should be taken into consideration if you are wanting to change ini settings other than those already listed/changed. You can also change the installed extensions by finding the `php::extension` declaration.
+Alongside PHP being installed, [PHPUnit](http://phpunit.de/) and [Composer](https://getcomposer.org/) are already present. PHP settings are changed using a tool known as [Augeas](http://augeas.net/) which has a specific syntax to follow. This should be taken into consideration if you are wanting to change ini settings other than those already listed/changed. You can also change the installed extensions by finding the `php::extension` declaration.
 
 It should also be noted that this is just a base for you to build upon. These scripts should be adapted to best suit your project and to mirror your live location as closely as possible.
 
