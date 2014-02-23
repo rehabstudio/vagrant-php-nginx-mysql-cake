@@ -23,12 +23,39 @@ GIT
     archive (0.0.1)
 
 GIT
+  remote: git://github.com/jfryman/puppet-nginx.git
+  ref: master
+  sha: 7cf6dac978fe08e061ed9201284c7a5bf22af2a3
+  specs:
+    nginx (0.0.7)
+      puppetlabs/apt (>= 1.0.0)
+      puppetlabs/concat (>= 1.0.0)
+      puppetlabs/stdlib (>= 0.1.6)
+
+GIT
+  remote: git://github.com/jippi/puppet-php.git
+  ref: master
+  sha: d4c8765fe683efdf1f577b0bd7c7010239b04562
+  specs:
+    php (0.7.0)
+      puppetlabs/apt (> 0.0.0)
+      puppetlabs/stdlib (> 0.0.0)
+
+GIT
   remote: git://github.com/puppetlabs/puppetlabs-apt.git
   ref: master
   sha: 738ef15316fef7d3f82d9d29414f71445b3a35d9
   specs:
     apt (1.4.1)
       puppetlabs/stdlib (>= 2.2.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-concat.git
+  ref: master
+  sha: 24906d1bca3f8a1b93b24d71c0e081eda57afc9e
+  specs:
+    concat (1.1.0-rc1)
+      puppetlabs/stdlib (>= 4.0.0)
 
 GIT
   remote: git://github.com/puppetlabs/puppetlabs-mysql.git
@@ -62,34 +89,14 @@ GIT
     cakecore (0.0.1)
 
 GIT
-  remote: https://github.com/jfryman/puppet-nginx.git
+  remote: git://github.com/rehabstudio/puppet-capistrano.git
   ref: master
-  sha: 7cf6dac978fe08e061ed9201284c7a5bf22af2a3
+  sha: c1a8ae905666f768ebf270b3bd8b74b63fd35dd6
   specs:
-    nginx (0.0.7)
-      puppetlabs/apt (>= 1.0.0)
-      puppetlabs/concat (>= 1.0.0)
-      puppetlabs/stdlib (>= 0.1.6)
+    capistrano (0.0.1)
 
 GIT
-  remote: https://github.com/jippi/puppet-php.git
-  ref: master
-  sha: d4c8765fe683efdf1f577b0bd7c7010239b04562
-  specs:
-    php (0.7.0)
-      puppetlabs/apt (> 0.0.0)
-      puppetlabs/stdlib (> 0.0.0)
-
-GIT
-  remote: https://github.com/puppetlabs/puppetlabs-concat.git
-  ref: master
-  sha: 24906d1bca3f8a1b93b24d71c0e081eda57afc9e
-  specs:
-    concat (1.1.0-rc1)
-      puppetlabs/stdlib (>= 4.0.0)
-
-GIT
-  remote: https://github.com/tPl0ch/puppet-composer.git
+  remote: git://github.com/tPl0ch/puppet-composer.git
   ref: master
   sha: 1bf5636c972f84e82566f6cd9945e64b89e36e5a
   specs:
@@ -100,6 +107,7 @@ DEPENDENCIES
   apt (>= 0)
   archive (>= 0)
   cakecore (>= 0)
+  capistrano (>= 0)
   composer (>= 0)
   concat (>= 0)
   mysql (>= 0)

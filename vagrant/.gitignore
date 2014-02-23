@@ -5,3 +5,5 @@ logs/*.log
 .profile
 .rbenvrc
 puppet/modules/*
+Capfile
+config/deploy/*

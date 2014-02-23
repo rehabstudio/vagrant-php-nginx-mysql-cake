@@ -27,8 +27,8 @@ php:
         "set Date/date.timezone Europe/Belfast"]
 capistrano: # ssh auth via agent forwarding
     server_ip: "1.2.3.4"
+    server_user: "secureuser"
     repo: "ssh://git@domain.com/project.git"
-    user: "secureuser" 
     folder: "/var/www/project.dev"
     branch:
         dev: "develop"
