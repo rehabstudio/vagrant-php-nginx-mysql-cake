@@ -10,12 +10,12 @@ rbenv::compile { $settings::ymlconfig['env']['ruby'] :
 }
 
 # install gems
-#rbenv::gem { "sass":
-#    user => 'vagrant',
-#    ruby => $settings::ymlconfig['env']['ruby'],
-#}
+rbenv::gem { "sass":
+    user => 'vagrant',
+    ruby => $settings::ymlconfig['env']['ruby'],
+}
 
-#rbenv::gem { "compass":
-#    user => 'vagrant',
-#    ruby => $settings::ymlconfig['env']['ruby'],
-#}
+rbenv::gem { "compass":
+    user => 'vagrant',
+    ruby => $settings::ymlconfig['env']['ruby'],
+}
