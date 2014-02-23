@@ -10,6 +10,7 @@ Requirements
 
 - [Virtualbox 4.2](https://www.virtualbox.org)
 - [Vagrant 1.4](http://www.vagrantup.com)
+- [Vagrant Vbguest Plugin](https://github.com/dotless-de/vagrant-vbguest)
 - [Vagrant Hostmanager Plugin](https://github.com/smdahlen/vagrant-hostmanager)
 
 Installation
