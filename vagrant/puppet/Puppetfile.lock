@@ -1,6 +1,9 @@
 FORGE
   remote: http://forge.puppetlabs.com
   specs:
+    nodes/php (0.8.0)
+      puppetlabs/apt (> 0.0.0)
+      puppetlabs/stdlib (> 0.0.0)
     puppetlabs/apt (1.4.1)
       puppetlabs/stdlib (>= 2.2.1)
     puppetlabs/concat (1.1.0-rc1)
@@ -31,15 +34,6 @@ GIT
       puppetlabs/apt (>= 1.0.0)
       puppetlabs/concat (>= 1.0.0)
       puppetlabs/stdlib (>= 0.1.6)
-
-GIT
-  remote: git://github.com/jippi/puppet-php.git
-  ref: master
-  sha: d4c8765fe683efdf1f577b0bd7c7010239b04562
-  specs:
-    php (0.7.0)
-      puppetlabs/apt (> 0.0.0)
-      puppetlabs/stdlib (> 0.0.0)
 
 GIT
   remote: git://github.com/puppetlabs/puppetlabs-apt.git
@@ -113,7 +107,7 @@ DEPENDENCIES
   mysql (>= 0)
   nginx (>= 0)
   nodejs (>= 0)
-  php (>= 0)
+  nodes/php (>= 0)
   rbenv (>= 0)
   stdlib (>= 0)
 

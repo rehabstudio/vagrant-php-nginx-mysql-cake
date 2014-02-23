@@ -1,6 +1,6 @@
 env:
     domain: "newsite.dev.rehabstudio.com"
-    ip: "192.168.33.10"
+    ip: "192.168.33.7"
     ram: 512
     vbname: "rehabstudio_box"
     ruby: "2.0.0-p247"
