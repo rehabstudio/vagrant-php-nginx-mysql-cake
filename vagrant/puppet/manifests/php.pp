@@ -40,3 +40,11 @@ package { 'pear.phpunit.de/PHPUnit':
     provider => pear,
     require  => Exec['php::pear::auto_discover'];
 }
+
+# execute composer if json is found
+exec { 'Installing Composer Packages':
+    cwd     => $settings::ymlconfig['env']['docRoot'],
+    command => 'composer install',
+    require => Class['php::composer'],
+    onlyif  => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"
+}
