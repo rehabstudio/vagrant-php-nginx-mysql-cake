@@ -1,6 +1,8 @@
 PHP/NGINX/MySQL VAGRANT BOX
 ===========================
 
+Be patient with the `vagrant up` as it can take up to an hour depending on your connection.
+
 Simple vagrant build for a general php/mysql setup on nginx. This will boot up an nginx/php/mysql ubuntu box for a single instance. It uses host manager for easy local DNS configuration.
 
 This particular box also installs some [CakePHP](https://github.com/cakephp/cakephp) and [Capistrano](https://github.com/capistrano/capistrano) dependencies.
