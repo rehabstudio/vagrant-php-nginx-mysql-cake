@@ -1,0 +1,22 @@
+{
+    "name": "test/website",
+    "description": "test project",
+    "config": {
+        "vendor-dir": "Vendor",
+        "github-oauth": {
+            "github.com": "b0873cdb1e630f70d6703ee36b929f6be96188a3"
+        }
+    },
+    "require": {
+        "cakephp/debug_kit": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "authors": [
+        {
+            "name": "JohnDoe",
+            "email": "i@am.me"
+        }
+    ]
+}

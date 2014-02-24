@@ -5,9 +5,10 @@ class settings {
     $ymlconfig = loadyaml('/vagrant/config.yml')
 }
 
-# Adding a global exec statement so we don't have to add paths to every one.
+# globals
 Exec {
-    path => ['/bin', '/sbin', '/usr/bin', '/usr/local/bin', '/usr/sbin']
+    path => ['/bin', '/sbin', '/usr/bin', '/usr/local/bin', '/usr/sbin'],
+    environment => "COMPOSER_HOME=/vagrant",
 }
 
 # sub-manifests

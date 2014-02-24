@@ -41,10 +41,20 @@ package { 'pear.phpunit.de/PHPUnit':
     require  => Exec['php::pear::auto_discover'];
 }
 
+# adding github oath to composer
+exec { 'Adding github oath':
+    cwd       => $settings::ymlconfig['env']['docRoot'],
+    command   => "composer config github-oauth.github.com ${settings::ymlconfig[github][oauth]}",
+    logoutput => true,
+    require   => Class['php::composer'],
+    onlyif    => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"
+}
+
 # execute composer if json is found
 exec { 'Installing Composer Packages':
-    cwd     => $settings::ymlconfig['env']['docRoot'],
-    command => 'composer install',
-    require => Class['php::composer'],
-    onlyif  => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"
+    cwd       => $settings::ymlconfig['env']['docRoot'],
+    command   => 'composer install',
+    logoutput => true,
+    require   => Class['php::composer'],
+    onlyif    => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"
 }

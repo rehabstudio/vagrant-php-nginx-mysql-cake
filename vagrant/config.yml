@@ -25,6 +25,8 @@ php:
         "set PHP/post_max_size 128M",
         "set PHP/upload_max_filesize 40M",
         "set Date/date.timezone Europe/Belfast"]
+github:
+    oauth: "YOUR-OAUTH-TOKEN-HERE"
 capistrano: # ssh auth via agent forwarding
     server_ip: "1.2.3.4"
     server_user: "secureuser"
