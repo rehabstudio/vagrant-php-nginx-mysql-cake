@@ -60,3 +60,6 @@ Composer Dependencies
 
 Similar to Node, puppet will search your `$siteRoot` for a `composer.json` file. If one is found, then the command `composer install` will be run on your behalf. If there are any changes throughout the lifetime of the project, be sure to manually delete any composer lock files before re-provisioning using the command `vagrant provision`.
 
+Note: for best results please create an OAUTH token and place it in the config.yml. GitHub has rate limiting which can cause the vagrant up to break if the limit has been reached. See http://developer.github.com/v3/#rate-limiting
+
+
