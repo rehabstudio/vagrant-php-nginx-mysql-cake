@@ -16,6 +16,7 @@ if [ ! -f /etc/puppet/hiera.yaml ]; then
     # Hiera is a key/value lookup tool for configuration data. We don't
     # actually use it but puppet'll throw an error if this file doesn't exist
     # at provision time
+    mkdir -p /etc/puppet/
     touch /etc/puppet/hiera.yaml
 fi
 
