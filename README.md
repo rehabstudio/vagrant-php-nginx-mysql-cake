@@ -15,6 +15,12 @@ Requirements
 - [Vagrant Vbguest Plugin](https://github.com/dotless-de/vagrant-vbguest)
 - [Vagrant Hostmanager Plugin](https://github.com/smdahlen/vagrant-hostmanager)
 
+
+Troubleshooting
+---------------
+Please note that running `vagrant up` for the first time can come with some issues to fix up. If you run into any issues please refer to [the troubleshooting documentation](https://github.com/rehabstudio/vagrant-php-nginx-mysql-cake/wiki/troubleshooting) and if you have a new remedy to add please do.
+
+
 Installation
 -------
 
