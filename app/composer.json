@@ -3,9 +3,7 @@
     "description": "test project",
     "config": {
         "vendor-dir": "Vendor",
-        "github-oauth": {
-            "github.com": "b0873cdb1e630f70d6703ee36b929f6be96188a3"
-        }
+        "process-timeout": 600
     },
     "require": {
         "cakephp/debug_kit": "dev-master"
