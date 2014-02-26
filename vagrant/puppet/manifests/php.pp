@@ -42,18 +42,22 @@ package { 'pear.phpunit.de/PHPUnit':
 }
 
 # adding github oath to composer
-exec { 'Adding github oath':
-    cwd       => $settings::ymlconfig['env']['docRoot'],
-    command   => "composer config github-oauth.github.com ${settings::ymlconfig[github][oauth]}",
-    logoutput => true,
-    require   => Class['php::composer'],
-    onlyif    => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"
+if $settings::ymlconfig['github']['oauth'] != 'YOUR-OAUTH-TOKEN-HERE' {
+    exec { 'Adding github oath':
+        cwd       => $settings::ymlconfig['env']['docRoot'],
+        command   => "composer config github-oauth.github.com ${settings::ymlconfig[github][oauth]}",
+        logoutput => true,
+        require   => Class['php::composer'],
+        onlyif    => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"
+    }
+} else {
+    notice('Composer: Template oauth token discovered in config.yml - not stored')
 }
 
 # execute composer if json is found
 exec { 'Installing Composer Packages':
     cwd       => $settings::ymlconfig['env']['docRoot'],
-    command   => 'composer install',
+    command   => 'composer install -vvv',
     logoutput => true,
     require   => Class['php::composer'],
     onlyif    => "test -f ${settings::ymlconfig[env][docRoot]}/composer.json"

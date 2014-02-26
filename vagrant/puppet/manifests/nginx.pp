@@ -17,6 +17,14 @@ nginx::resource::vhost { $settings::ymlconfig['env']['domain']:
     try_files => ['$uri', '$uri/', '/index.php?$args'];
 }
 
+# fastcgi parameters
+# Note: this seems to be broken in the nginx module - it implodes the arrays to create a long one-line string. I've manually added newlines, semi-colons and 'fastcgi_params' here to work around it
+$fastcgi_param = [
+    "APPLICATION_ENV local;\n",
+    "fastcgi_param TIMEZONE Europe/Belfast;\n",
+    "fastcgi_param PHP_VALUE include_path=.:/usr/share/php:/usr/share/pear:${settings::ymlconfig[cake][corePath]}/lib:/usr/share/php/PHPUnit"
+]
+
 # Pushing all PHP files to FastCGI Process Manager (php5-fpm).
 nginx::resource::location { "${settings::ymlconfig[env][domain]} php files":
     vhost => $settings::ymlconfig['env']['domain'],
@@ -24,9 +32,8 @@ nginx::resource::location { "${settings::ymlconfig[env][domain]} php files":
     fastcgi => '127.0.0.1:9000',
     location => '~ \.php$',
     location_cfg_append => {
-        fastcgi_param => 'APPLICATION_ENV local',
-        fastcgi_param => "PHP_VALUE include_path=.:/usr/share/php:/usr/share/pear:${settings::ymlconfig[cake][corePath]}/lib",
-        fastcgi_index => 'index.php'
+        'fastcgi_index' => 'index.php',
+        'fastcgi_param' => $fastcgi_param,
     },
     notify => Class['nginx::service'];
 }
