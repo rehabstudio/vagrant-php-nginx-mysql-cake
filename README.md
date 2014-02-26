@@ -68,7 +68,7 @@ Composer Dependencies
 
 Similar to Node, puppet will search your `$siteRoot` for a `composer.json` file. If one is found, then the command `composer install` will be run on your behalf. If there are any changes throughout the lifetime of the project, be sure to manually delete any composer lock files before re-provisioning using the command `vagrant provision`.
 
-Note: please [create an OAUTH token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) and place it in the config.yml. GitHub has rate limiting which can cause the vagrant up to break if the limit has been reached. See http://developer.github.com/v3/#rate-limiting
+Note: please [create an OAUTH token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) and place it in the `config.yml`. GitHub has rate limiting which can cause the vagrant up to break if the limit has been reached. See http://developer.github.com/v3/#rate-limiting
 
 Note: if the composer install is too large you may run into memory allocation problems. To get around this you can increase the amount of RAM that the box has, in `config.yml`.
 
