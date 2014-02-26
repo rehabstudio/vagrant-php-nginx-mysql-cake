@@ -5,11 +5,11 @@ env:
     vbname: "rehabstudio_box"
     ruby: "2.0.0-p247"
     boxurl: "http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-vagrant-amd64-disk1.box"
-    boxname: "precise64"
+    boxname: "precise64-26Feb14-project"
     docRoot : '/var/www/app'
     siteRoot: '/webroot' # appended to docRoot
 mysql:
-    name: "newsitedbname"
+    name: "newsitedbname" # ensure this is matched in the sql located in mysql->file below
     user: "vagrantuser"
     pass: "localdbpwd"
     file: "/vagrant/files/db_schema.sql"
@@ -37,5 +37,5 @@ capistrano: # ssh auth via agent forwarding
         staging: "master"
         live: "master"
 cake:
-    repoTag: "2.3.10"
+    repoTag: "2.4.5"
     corePath: "/var/www/cakephp"
